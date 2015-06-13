@@ -1,0 +1,1 @@
+rails generate scaffold ticket price:integer email_address:string used_tent:boolean notes:text
