@@ -22,14 +22,14 @@
       <tr>
         <td><%= book.name %></td>
         <td><%= book.author %></td>
-        <td><%= book.price %></td>
+        <td><%= number_to_currency(book.price, unit: '¥', precision: 0) %></td>
         <td><%= book.company %></td>
-        <td><%= book.day %></td>
+        <td><%= book.day.strftime('%Y/%m/%d') %></td>
         <td><%= book.isbn_code %></td>
         <td><img src = "<%= book.cover %>" class="img-responsive" alt="Responsive image"></td>
-        <td><%= link_to 'Show', book, class: "btn btn-success btn-lg" %></td>
-        <td><%= link_to 'Edit', edit_book_path(book), class: "btn btn-info btn-lg" %></td>
-        <td><%= link_to 'Destroy', book,class: "btn btn-warning btn-sm" , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '閲覧', book, class: "btn btn-success btn-lg" %></td>
+        <td><%= link_to '編集', edit_book_path(book), class: "btn btn-info btn-lg" %></td>
+        <td><%= link_to '削除', book,class: "btn btn-warning btn-sm" , method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
